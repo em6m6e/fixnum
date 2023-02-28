@@ -59,6 +59,10 @@ class Int64 implements IntX {
   /// is performed.
   const Int64._bits(this._l, this._m, this._h);
 
+  const Int64.bits(this._l, this._m, this._h);
+
+
+
   /// Parses [source] in a given [radix] between 2 and 36.
   ///
   /// Returns an [Int64] with the numerical value of [source].
