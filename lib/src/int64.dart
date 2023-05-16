@@ -59,10 +59,12 @@ class Int64 implements IntX {
   /// is performed.
   const Int64._bits(this._l, this._m, this._h);
 
-  const Int64.bits({required int l, required int m, required int h})
+  const Int64.smallInt(int l)
       : _l = l,
-        _m = m,
-        _h = h;
+        _m = 0,
+        _h = 0,
+        assert(0 <= l),
+        assert(l < 4194304); // 4194304 = 2^22
 
   /// Parses [source] in a given [radix] between 2 and 36.
   ///
