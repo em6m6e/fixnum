@@ -66,6 +66,17 @@ class Int64 implements IntX {
         assert(0 <= l),
         assert(l < 4194304); // 4194304 = 2^22
 
+  const Int64.fromBits(int l, int m, int h)
+      : _l = l,
+        _m = m,
+        _h = h,
+        assert(0 <= l),
+        assert(l < 4194304), // 4194304 = 2^22
+        assert(0 <= m),
+        assert(m < 4194304), // 4194304 = 2^22
+        assert(0 <= h),
+        assert(h < 1048576); // 4194304 = 2^22
+
   /// Parses [source] in a given [radix] between 2 and 36.
   ///
   /// Returns an [Int64] with the numerical value of [source].
