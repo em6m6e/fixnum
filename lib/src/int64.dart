@@ -758,6 +758,16 @@ class Int64 implements IntX {
     }
   }
 
+  /// return the 32 least significant bits as an Int
+  int toLowInt() {
+    return ((_m & 0x3ff) << _BITS) | _l;
+  }
+
+  /// return the 32 most significant bits as an Int
+  int toHighInt() {
+    return (_h << 12) | (_m >> 10);
+  }
+
   /// Returns an [Int32] containing the low 32 bits of this [Int64].
   @override
   Int32 toInt32() => Int32(((_m & 0x3ff) << _BITS) | _l);
